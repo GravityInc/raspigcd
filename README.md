@@ -130,3 +130,26 @@ contributor you can ask me (pantadeusz) for a different license for the
 code.
 I will have the right to license the code with contribution differently for commercial 
 purposes - for example - with custom features. Of course credits will be maintained. In this (hypothetical) case I will try to reach most active contributors to share some profit. Fortunately/unfortunately right now this is a one person show so the problem does not exist :)
+
+
+==============Steps to use this code first time==========
+
+1) update raspi = sudo apt full-upgrade
+2) install cmake = sudo apt-get install build-essential cmake pkg-config
+3) restart raspi = sudo reboot
+4) download the Catch2 = git clone https://github.com/catchorg/Catch2.git
+5) cd into the project = cd Catch2
+6) execute command = cmake -Bbuild -H. -DBUILD_TESTING=OFF
+7) execute command = sudo cmake --build build/ --target install
+8) cd out of the folder
+9) download the raspigcd = git clone https://github.com/XXXXXXXX/raspigcd.git replace XXXXXXXX with the repo from where you are going to clone the code base from.
+10) cd into the project = cd raspigcd
+11) make a build dir = mkdir build
+12) cd into the folder = cd build
+13) execute command = cmake ..
+14) execute command = make -j 2 gcd
+15) execute command to execute your gCode= sudo ./gcd -c ../v4.json -f your_gcode_file.gcd
+
+==============Steps to use this code for executing gcode file==========
+
+1) execute command to execute your gCode= sudo ./gcd -c ../v4.json -f your_gcode_file.gcd
